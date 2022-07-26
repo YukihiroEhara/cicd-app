@@ -53,4 +53,4 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: http://localhost:3000
-          wait-on-timeout: 300
+          wait-on-timeout: 600
