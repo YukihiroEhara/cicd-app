@@ -1,0 +1,38 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cicdapp-dev-165733-authRole",
+      "UnauthRoleArn": "arn:aws:iam::306703177254:role/amplify-cicdapp-dev-165733-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::306703177254:role/amplify-cicdapp-dev-165733-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-cicdapp-dev-165733-deployment",
+      "UnauthRoleName": "amplify-cicdapp-dev-165733-unauthRole",
+      "StackName": "amplify-cicdapp-dev-165733",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:306703177254:stack/amplify-cicdapp-dev-165733/717c3c50-0bef-11ed-be10-0a33bdd9f41b",
+      "AmplifyAppId": "d1hmxjqo185oap"
+    },
+    "categories": {
+      "auth": {
+        "cicdapp15bbff88": {}
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cicdapp-prod-171303-authRole",
+      "UnauthRoleArn": "arn:aws:iam::930361362879:role/amplify-cicdapp-prod-171303-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::930361362879:role/amplify-cicdapp-prod-171303-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-cicdapp-prod-171303-deployment",
+      "UnauthRoleName": "amplify-cicdapp-prod-171303-unauthRole",
+      "StackName": "amplify-cicdapp-prod-171303",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:930361362879:stack/amplify-cicdapp-prod-171303/9c174cf0-0bf1-11ed-baab-0e29b09ae5a3",
+      "AmplifyAppId": "d2osw0ex42t9bg"
+    },
+    "categories": {
+      "auth": {
+        "cicdapp15bbff88": {}
+      }
+    }
+  }
+}

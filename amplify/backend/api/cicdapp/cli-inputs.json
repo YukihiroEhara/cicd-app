@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "cicdapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/yukihiro/projects/cicdApp/cicd-app/amplify/backend/api/cicdapp/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authcicdapp15bbff88"
+    }
+  }
+}

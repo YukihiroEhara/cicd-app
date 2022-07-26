@@ -3,10 +3,10 @@ import { Amplify } from "aws-amplify";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 
-import awsExports from "./aws-exports";
+import awsExports from "../../../src/aws-exports";
 Amplify.configure(awsExports);
 
-export default function App() {
+export default function TestApp() {
   return (
     <Authenticator>
       {({ signOut, user }: any) => (
