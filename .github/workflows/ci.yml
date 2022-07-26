@@ -10,8 +10,8 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - shell: bash
       - name: exports.js touch
+      - shell: bash
         run: |
           cd src
           touch aws-exports.js
