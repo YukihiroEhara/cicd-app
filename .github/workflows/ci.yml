@@ -15,7 +15,7 @@ jobs:
           cd src
           touch aws-exports.js
       - name: exports.js echo
-        run: |    
+        run: |
           echo -e "const awsmobile = {
           aws_project_region: \"ap-northeast-1\",
           aws_cognito_identity_pool_id: \"ap-northeast-1:b5c09d0d-80e3-48bf-85ac-7ee51d1edad4\",
@@ -49,6 +49,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          command: yarn cypress run-ct
+          # command: yarn cypress run-ct
+          build: npm run build
+          start: npm start
           wait-on: http://localhost:3000
           wait-on-timeout: 300
