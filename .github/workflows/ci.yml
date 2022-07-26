@@ -13,36 +13,38 @@ jobs:
       - shell: bash
         run: |
           cd src
-          touch test.js
+          touch aws-exports.js
+      - name: exports.js echo
+        run: |    
           echo -e "const awsmobile = {
-          aws_project_region: "ap-northeast-1",
-          aws_cognito_identity_pool_id: "ap-northeast-1:b5c09d0d-80e3-48bf-85ac-7ee51d1edad4",
-          aws_cognito_region: "ap-northeast-1",
-          aws_user_pools_id: "ap-northeast-1_FQ5M8Ymo2",
-          aws_user_pools_web_client_id: "4m39k49782tvu1tafcjht6slko",
+          aws_project_region: \"ap-northeast-1\",
+          aws_cognito_identity_pool_id: \"ap-northeast-1:b5c09d0d-80e3-48bf-85ac-7ee51d1edad4\",
+          aws_cognito_region: \"ap-northeast-1\",
+          aws_user_pools_id: \"ap-northeast-1_FQ5M8Ymo2\",
+          aws_user_pools_web_client_id: \"4m39k49782tvu1tafcjht6slko\",
           oauth: {},
           aws_cognito_username_attributes: [
-            "EMAIL"
+            \"EMAIL\"
           ],
-          aws_cognito_social_providers": [],
-          aws_cognito_signup_attributes": [
-            "EMAIL"
+          aws_cognito_social_providers: [],
+          aws_cognito_signup_attributes: [
+            \"EMAIL\"
           ],
-          "aws_cognito_mfa_configuration": "OFF",
-          "aws_cognito_mfa_types": [
-            "SMS"
+          aws_cognito_mfa_configuration: \"OFF\",
+          aws_cognito_mfa_types: [
+            \"SMS\"
           ],
-          "aws_cognito_password_protection_settings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
+          aws_cognito_password_protection_settings: {
+          passwordPolicyMinLength: 8,
+          passwordPolicyCharacters: []
           },
-          "aws_cognito_verification_mechanisms": [
-            "EMAIL"
+          aws_cognito_verification_mechanisms: [
+            \"EMAIL\"
             ],
-          "aws_appsync_graphqlEndpoint": "https://er3lgdhucrc45foz4xpi7cjafa.appsync-api.ap-northeast-1.amazonaws.com/graphql",
-          "aws_appsync_region": "ap-northeast-1",
-          "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
-          };" >> test.js
+          aws_appsync_graphqlEndpoint: \"https://er3lgdhucrc45foz4xpi7cjafa.appsync-api.ap-northeast-1.amazonaws.com/graphql\",
+          aws_appsync_region: \"ap-northeast-1\",
+          aws_appsync_authenticationType: \"AMAZON_COGNITO_USER_POOLS\"
+          };" >> aws-exports.js
           cd ../
       - name: Cypress run
         uses: cypress-io/github-action@v4
