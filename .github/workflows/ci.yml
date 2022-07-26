@@ -47,7 +47,8 @@ jobs:
           aws_appsync_graphqlEndpoint: \"https://er3lgdhucrc45foz4xpi7cjafa.appsync-api.ap-northeast-1.amazonaws.com/graphql\",
           aws_appsync_region: \"ap-northeast-1\",
           aws_appsync_authenticationType: \"AMAZON_COGNITO_USER_POOLS\"
-          };" >> aws-exports.js
+          };
+          export default awsmobile;" >> aws-exports.js
       - name: cypress config add
         run: |
           touch cypress.config.ts
