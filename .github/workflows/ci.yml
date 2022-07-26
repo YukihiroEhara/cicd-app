@@ -14,7 +14,7 @@ jobs:
         run: |
           cd src
           touch aws-exports.js
-          ls
+          pwd
       - name: exports.js echo
         run: |
           cd src
