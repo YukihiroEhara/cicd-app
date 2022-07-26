@@ -17,6 +17,7 @@ jobs:
           ls
       - name: exports.js echo
         run: |
+          cd src
           echo -e "const awsmobile = {
           aws_project_region: \"ap-northeast-1\",
           aws_cognito_identity_pool_id: \"ap-northeast-1:b5c09d0d-80e3-48bf-85ac-7ee51d1edad4\",
@@ -46,13 +47,6 @@ jobs:
           aws_appsync_region: \"ap-northeast-1\",
           aws_appsync_authenticationType: \"AMAZON_COGNITO_USER_POOLS\"
           };" >> aws-exports.js
-      - name: cat
-        run: |
-          cat aws-exports.js
-      - name: folder cd
-        run: |
-          cd ../
-          ls
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
