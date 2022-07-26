@@ -50,3 +50,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           command: yarn cypress run-ct
+          wait-on: http://localhost:3000
+          wait-on-timeout: 300
