@@ -12,7 +12,8 @@ jobs:
       # and run all Cypress tests
       - shell: bash
         run: |
-          touch src/aws-exports.js
+          cd src
+          touch aws-exports.js
           echo -e "const awsmobile = {
           aws_project_region: "ap-northeast-1",
           aws_cognito_identity_pool_id: "ap-northeast-1:b5c09d0d-80e3-48bf-85ac-7ee51d1edad4",
@@ -41,7 +42,8 @@ jobs:
           "aws_appsync_graphqlEndpoint": "https://er3lgdhucrc45foz4xpi7cjafa.appsync-api.ap-northeast-1.amazonaws.com/graphql",
           "aws_appsync_region": "ap-northeast-1",
           "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
-          };" >> src/aws-exports.js
+          };" >> aws-exports.js
+          cd ../
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
