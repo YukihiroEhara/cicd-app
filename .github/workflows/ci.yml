@@ -11,11 +11,9 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - shell: bash
-        run: |
-          cd src
-          ls
       - name: exports.js touch
         run: |
+          cd src
           touch aws-exports.js
           ls
       - name: exports.js echo
