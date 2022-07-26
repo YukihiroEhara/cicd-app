@@ -13,9 +13,11 @@ jobs:
       - shell: bash
         run: |
           cd src
+          ls
       - name: exports.js touch
         run: |
           touch aws-exports.js
+          ls
       - name: exports.js echo
         run: |
           echo -e "const awsmobile = {
@@ -47,10 +49,13 @@ jobs:
           aws_appsync_region: \"ap-northeast-1\",
           aws_appsync_authenticationType: \"AMAZON_COGNITO_USER_POOLS\"
           };" >> aws-exports.js
-
+      - name: cat
+        run: |
+          cat aws-exports.js
       - name: folder cd
         run: |
           cd ../
+          ls
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
