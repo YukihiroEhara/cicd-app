@@ -56,7 +56,6 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           # command: yarn cypress run-ct
-          build: npm run build
-          start: npm start
+          command: yarn cypress run
           wait-on: http://localhost:3000
           wait-on-timeout: 600
