@@ -70,13 +70,13 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          command: yarn cypress run-ct
+          # command: yarn cypress run-ct
           # run: |
           #   cd src
           #   ls
           #   cd ../
-          # build: yarn build
-          # start: yarn start
+          build: yarn build
+          start: yarn start
           # command: yarn cypress run
           # wait-on: http://localhost:3000
           # wait-on-timeout: 600
