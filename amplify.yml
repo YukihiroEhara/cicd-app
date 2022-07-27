@@ -21,20 +21,27 @@ frontend:
     paths:
       - node_modules/**/*
 test:
-  artifacts:
-    baseDirectory: cypress
-    configFilePath: "**/mochawesome.json"
-    files:
-      - "**/*.png"
-      - "**/*.mp4"
   phases:
     preTest:
       commands:
-        - yarn install
-        - yarn add mocha mochawesome mochawesome-merge mochawesome-report-generator
+        - rm -rf node_modules
+        - yarn install --frozen-lockfile
+        - yarn add pm2@5.1.2 --dev
+        - yarn add wait-on@6.0.0 --dev
+        - yarn add mocha@9.1.3 mochawesome@7.0.1 mochawesome-merge@4.2.1 mochawesome-report-generator@6.0.1 --dev
+        - yarn run cypress:clean
+        - yarn run pm2 start 'yarn run start'
+        - yarn run wait-on https://localhost:3000
     test:
       commands:
-        - npx start-test 'yarn start' 3000 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        - yarn run cypress run --reporter mochawesome --reporter-options 'reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss'
     postTest:
       commands:
-        - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json
+        - yarn run mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
+        - yarn run pm2 kill
+  artifacts:
+    baseDirectory: cypress
+    configFilePath: '**/mochawesome.json'
+    files:
+      - '**/*.png'
+      - '**/*.mp4'
