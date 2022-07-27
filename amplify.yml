@@ -33,6 +33,8 @@ test:
     test:
       commands:
         - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+    cTest:
+      commands: 'npx cypress run-ct'
     postTest:
       commands:
         - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json
