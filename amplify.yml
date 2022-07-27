@@ -30,6 +30,9 @@ test:
         - yarn add mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator
         - npx pm2 start npm -- start
         - "npx wait-on http://localhost:3000"
+    cTest:
+      commands:
+        - npx cypress run-ct
     test:
       commands:
         - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
@@ -37,9 +40,6 @@ test:
       commands:
         - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json
         - npx pm2 kill
-    cTest:
-      commands:
-        - npx cypress run-ct
   artifacts:
     baseDirectory: cypress
     configFilePath: "**/mochawesome.json"
